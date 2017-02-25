@@ -1,16 +1,36 @@
 class Complex
 {
-    adj Convoluted (complicated)
+    adj convoluted (complicated)
     {
-        It's a very convoluted financial transaction. \\这是
+        It's a very convoluted financial transaction. 
     }
     
     
 }
 
+class Worse
+{
+    vt exacerbate (worsen)
+    {
+        Asking them to put special thought into their gifts only exacerbated overindividuation. 
+    }
+    
+}
+
+class Tradition
+{
+    adj orthodox (traditional)
+    {
+        Orthodox Jews \\
+        An orthodox artist. \\
+    }
+    
+}
+
+
 class 
 {
-    word ()
+     ()
     {
         Sentence. \\
     }
