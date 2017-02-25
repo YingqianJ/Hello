@@ -1,5 +1,18 @@
-Word1 \\Meaning
-    Example sentence \\translation
+class Complex
+{
+    adj Convoluted (complicated)
+    {
+        It's a very convoluted financial transaction. \\这是
+    }
     
-Word2 \\Meaning
     
+}
+
+class 
+{
+    word ()
+    {
+        Sentence. \\
+    }
+    
+}
