@@ -1,0 +1,44 @@
+dec = int(input('please enter a number:\n'))
+#print('decimal is:\n', dec)
+#print('binary is:\n', bin(dec))
+#print('hexadecimal is:\n',hex(dec))
+dec2=dec
+
+#手動轉換為二進制
+binList =[]#建立一個空白的陣列
+i=0
+while(dec>=1):
+  binList.append(i)#使空白陣列擁有i個位置
+  binList[i]=int(dec%2)#取餘數
+  dec=dec/2
+  i = i+1
+
+#print('binary is:\n 0b',end='')
+#j=int(len(binList))
+#while(j>0):
+    #print(binList[j-1],end='')
+    #j=j-1
+
+
+#手動轉換為芊芊版四進制
+fourList =[]#建立一個空白的陣列
+i=0
+while(dec2>=1):
+  fourList.append(i)#使空白陣列擁有i個位置
+  fourList[i]=int(dec2%4)#取餘數
+  dec2=dec2/4
+  i = i+1
+
+#print()
+print('qianCode is:\n ',end='')
+j=int(len(fourList))
+while(j>0):
+    j =j-1
+    qianCode=str(fourList[j])
+    qianCode=qianCode.replace("0","@")
+    qianCode=qianCode.replace("1","a")
+    qianCode=qianCode.replace("2","b")
+    qianCode=qianCode.replace("3","c")
+    print(qianCode,end='')
+    
+print()
