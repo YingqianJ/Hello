@@ -10,15 +10,13 @@ def transQua(dec,fourList):
 
 #以自定義符號代替0123
 def transCode(qianCode,fourList):
-  j=0
-  while(j<len(fourList)):
+  for j in range(len(fourList)):
     qianCode.append(j)
     qianCode[j]=str(fourList[j])
     qianCode[j]=qianCode[j].replace("0","@")
     qianCode[j]=qianCode[j].replace("1","a")
     qianCode[j]=qianCode[j].replace("2","b")
     qianCode[j]=qianCode[j].replace("3","c")
-    j = j+1
     
 #輸出
 def output(qianCode):
