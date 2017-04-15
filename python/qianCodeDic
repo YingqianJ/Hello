@@ -25,17 +25,17 @@ def code27(a):
     stra=str(a)
   code_a=code[stra]
   outcome=f+code_a
-  print('qianCode27 is:',outcome)
+  return outcome
 
 
-#以自定義符號代替0123 + output
-def transCode(fourList):
-  j=len(fourList)
-  while(j>0):
-    j=j-1
-    number = str(fourList[j])
-    for char in number:
-      print(code[char.upper()],end='')
+#以自定義符號代替0123
+def transCode2(fourList):
+  aaa=''
+  for j in range(len(fourList)):
+    temp = str(fourList[j])
+    codea=code[temp]
+    aaa=codea+aaa
+  return aaa
     
   
 #主程式
@@ -50,7 +50,7 @@ code={'0':'@', '1':'a', '2':'b', '3':'c',
       '24':'x', '25':'y', '26':'z', 
      }
 transQua(number,myList)
-print('qianCode4 is: ',end='')
-transCode(myList)
-print()
-code27(number)
+aa=transCode2(myList)
+print('qianCode4 is: ',aa)
+bb=code27(number)
+print('qianCode27 is:',bb)
