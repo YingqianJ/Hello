@@ -8,6 +8,25 @@ def transQua(dec,fourList):
     i=i+1
   return fourList
 
+#轉換為27進制+自定符號+輸出
+def code27(a):
+  f=''
+  i=0
+  while(a/(27**i)>1):
+    i=i+1  
+  while(i>1):
+    i=i-1
+    c=a/(27**i)
+    d=int(c)
+    strd=str(d)
+    code_d = code[strd]
+    f = f+code_d
+    a=a-d*(27**i)
+    stra=str(a)
+  code_a=code[stra]
+  outcome=f+code_a
+  print('qianCode27 is:',outcome)
+
 
 #以自定義符號代替0123 + output
 def transCode(fourList):
@@ -20,9 +39,18 @@ def transCode(fourList):
     
   
 #主程式
-a = int(input('please enter a number:'))
+number = int(input('please enter a number:'))
 myList =[]
-code={'0':'@', '1':'a', '2':'b', '3':'c'}
-transQua(a,myList)
-print('qianCode is: ',end='')
+code={'0':'@', '1':'a', '2':'b', '3':'c',
+      '4':'d', '5':'e', '6':'f', '7':'g',
+      '8':'h', '9':'i', '10':'j', '11':'k',
+      '12':'l', '13':'m', '14':'n', '15':'o',
+      '16':'p', '17':'q', '18':'r', '19':'s',
+      '20':'t', '21':'u', '22':'v', '23':'w',
+      '24':'x', '25':'y', '26':'z', 
+     }
+transQua(number,myList)
+print('qianCode4 is: ',end='')
 transCode(myList)
+print()
+code27(number)
