@@ -57,6 +57,14 @@ def transCode(fourList):
     number = str(fourList[j])
     for char in number:
       print(code[char.upper()],end='')
+      
+#以自定義符號代替0123 + output(簡化）
+def transCode(fourList):
+  j=len(fourList)
+  while(j>0):
+    j=j-1
+    temp = str(fourList[j])
+    print(code[temp],end='')
     
 #輸出
 def output(qianCode):
