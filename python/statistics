@@ -37,3 +37,47 @@ stats.ttest_rel(data['sumE'], data['sumT'])
 
 #用單一t做相依t（相減法）
 stats.ttest_1samp(data[‘sumE’] - data[‘sumT’], 0)
+
+
+
+#線性代數
+
+import numpy as np
+from scipy import linalg
+
+#輸入矩陣a
+a = np.array([[1,2],[3,4]])
+
+#計算a的反矩陣
+ia = linalg.inv(a)
+
+#矩陣a乘以一個常數
+b = 3*a
+
+#矩陣乘法
+c = np.dot(a, b)
+i = np.dot(a, ia)
+
+#矩陣轉置
+a.T
+
+#計算a的行列式值
+det_a=linalg.det(a)
+
+
+
+#（自己寫模组diy_linalg.py）
+import diy_linalg as dl
+
+#進行LU分解  （使用时 dl.LU( , )
+def LU( , ):
+    
+
+#化為簡約列梯陣的方法（自己寫）
+def Simple( , ):
+    
+
+#求A的n次的方法（自己寫）
+
+
+#討論a, b, c, d關係的方法（自己寫）
