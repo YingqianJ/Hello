@@ -1,0 +1,25 @@
+# coding: utf - 8
+import requests
+from bs4 import BeautifulSoup
+
+link = "https://scholar.google.com/citations?user=1kt2b0wAAAAJ&hl=en&oi=ao"
+page = requests.get(link)
+
+soup = BeautifulSoup(page.text, "lxml")
+#b = soup.prettify()  
+#print(b) show the html page in a more beautiful way
+
+pr_name = soup.html.head.title
+citation = soup.find_all("td", class_="gsc_rsb_std")
+
+#show the results
+print(titleTag)
+print(title)
+
+name = str(pr_name)
+cit = str(citation)
+
+#save the information as txt
+with open('cit.txt',"a+") as f:
+    f.write(cit)
+    f.close()
