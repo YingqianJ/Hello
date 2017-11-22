@@ -1,9 +1,38 @@
 # coding: utf - 8
 import requests
-from bs4 import BeautifulSoup
 
-link = "https://scholar.google.com/citations?user=1kt2b0wAAAAJ&hl=en&oi=ao"
-page = requests.get(link)
+#request the page
+page = requests.get('https://scholar.google.com/citations?user=1kt2b0wAAAAJ&hl=en&oi=ao')
+
+#or
+#link = "https://scholar.google.com/citations?user=1kt2b0wAAAAJ&hl=en&oi=ao"
+#page = requests.get(link)
+
+
+#--use XPath--
+from lxml import html
+
+#对获取到的page格式化操作，以让XPath来解析
+tree = html.fromstring(page.text)
+
+#XPath解析，获取你要的文字段落
+cit_all = tree.xpath('//td[@class="gsc_rsb_std"]/text()')
+cit_20 = tree.xpath('//a[@class="gsc_a_ac gs_ibl"]/text()')
+year_20 = tree.xpath('//span[@class="gsc_a_h gsc_a_hc gs_ibl"]/text()')
+cit_year = tree.xpath('//span[@class="gsc_g_al"]/text()')
+#data = tree.xpath('//div[@class="gs_gray"]/text()')
+
+print(cit_all)
+print(cit_20)
+print(year_20)
+print(cit_year)
+#print(data)
+
+
+
+
+#--use BeautifulSoup--
+from bs4 import BeautifulSoup
 
 soup = BeautifulSoup(page.text, "lxml")
 #b = soup.prettify()  
