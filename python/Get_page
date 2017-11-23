@@ -16,18 +16,32 @@ from lxml import html
 tree = html.fromstring(page.text)
 
 #XPath解析，获取你要的文字段落
-cit_all = tree.xpath('//td[@class="gsc_rsb_std"]/text()')
-cit_20 = tree.xpath('//a[@class="gsc_a_ac gs_ibl"]/text()')
-year_20 = tree.xpath('//span[@class="gsc_a_h gsc_a_hc gs_ibl"]/text()')
-cit_year = tree.xpath('//span[@class="gsc_g_al"]/text()')
+cit_all_raw = tree.xpath('//td[@class="gsc_rsb_std"]/text()')
+cit_20_raw = tree.xpath('//a[@class="gsc_a_ac gs_ibl"]/text()')
+year_20_raw = tree.xpath('//span[@class="gsc_a_h gsc_a_hc gs_ibl"]/text()')
+cit_year_raw = tree.xpath('//span[@class="gsc_g_al"]/text()')
 #data = tree.xpath('//div[@class="gs_gray"]/text()')
 
-print(cit_all)
-print(cit_20)
-print(year_20)
-print(cit_year)
-#print(data)
+#转换为数字
+cit_all = [int(x) for x in cit_all_raw]
+cit_20 = [int(x) for x in cit_20_raw]
+year_20 = [int(x) for x in year_20_raw]
+cit_year = [int(x) for x in cit_year_raw]
 
+
+#输出为csv
+import numpy as np
+import pandas as pd
+#data1_前20引用数量及年份
+a = np.vstack([cit_20, year_20])
+
+df = pd.DataFrame(a)
+df.to_csv('cit_20.csv',index = False)
+
+#data2_各种关于引用量的数据
+cit_all.extend(cit_year)
+df_all = pd.DataFrame(cit_all)
+df_all.to_csv('cit_all.csv', index = False)
 
 
 
