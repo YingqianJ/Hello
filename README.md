@@ -1,3 +1,7 @@
+This is a repo about my learning programming progress. 
+
+# Skill Tree and reference websites
+
 ## Java
 <a href=https://www.zhihu.com/question/25255189>知乎：自学 Java 怎么入门？</a>
 
